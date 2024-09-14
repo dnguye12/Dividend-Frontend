@@ -1,11 +1,15 @@
-@import './components/menu/menu.css';
+@import './components/menu/components/menu.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply text-sm;
+}
+
 h1 {
-    @apply text-3xl font-semibold;
+    @apply text-3xl font-semibold mb-2;
 }
 
 h2 {
@@ -13,5 +17,5 @@ h2 {
 }
 
 .btn {
-    @apply transition duration-300 w-10 h-10 min-h-10 max-h-10
+    @apply transition duration-300 
 }

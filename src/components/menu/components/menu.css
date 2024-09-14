@@ -1,5 +1,5 @@
 .menu-btn {
-    @apply btn btn-ghost rounded text-lg h-12 w-12;
+    @apply btn btn-ghost rounded w-10 h-10 min-h-10 max-h-10;
 }
 
 [data-theme="dark"] .menu-btn {

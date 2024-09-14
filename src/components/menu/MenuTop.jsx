@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Menu = () => {
+const MenuTop = () => {
   const [lightMode, setLightMode] = useState(false);
   const { t } = useTranslation();
 
@@ -16,7 +16,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="flex justify-between items-center bg-base-950 text-text px-5 h-16 border-b border-b-border shadow">
+    <div className="absolute top-0 left-0 w-full flex justify-between items-center bg-base-950 text-text px-5 h-16 border-b border-b-border shadow z-50">
       <div className="flex items-center">
         <label
           htmlFor="my-drawer-1"
@@ -48,4 +48,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuTop;
