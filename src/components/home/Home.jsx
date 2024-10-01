@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import Index from "./components/Index";
+import Highlight from "./components/highlight/Highlight";
+import Indexes from "./components/index/Indexes";
 
 const IndexHolder = () => {
   return (
@@ -27,19 +28,11 @@ const StockHomeNewsSkeleton = () => {
 const Home = () => {
   return (
     <div className="flex flex-col">
-      <Hero />
+      {/*<Hero /> */}
 
-      <div className="p-10">
-        <Index />
-
-        <div>
-          <div className="grid grid-cols-4 gap-4 my-4">
-            <IndexHolder />
-            <IndexHolder />
-            <IndexHolder />
-            <IndexHolder />
-          </div>
-        </div>
+      <div className="p-10 pt-20">
+        <Indexes />
+        <Highlight />
 
         <div>
           <h2 className="text-text mb-2">Stock News</h2>

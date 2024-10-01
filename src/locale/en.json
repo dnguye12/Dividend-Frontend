@@ -1,9 +1,15 @@
 {
-    "test": {
-      "text": "Test"
+  "test": {
+    "text": "Test"
+  },
+  "Home": {
+    "Highlight": {
+      "Active-title": "Most Active Today",
+      "Active-error": "Today top active data is currently not available.",
+      "Gainer-title": "Top <0>Gainers</0> Today",
+      "Loser-title": "Top <0>Losers</0> Today",
+      "View-More": "View More"
     },
-    "Home": {
-      "hero-description": "We provide <0>100% free</0> and <1>easy-to-understand</1> data to <2>Retail Investors</2>."
-    }
+    "hero-description": "We provide <0>100% free</0> and <1>easy-to-understand</1> data to <2>Retail Investors</2>."
   }
-  
+}

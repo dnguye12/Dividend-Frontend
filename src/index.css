@@ -1,4 +1,5 @@
 @import './components/menu/components/menu.css';
+@import './components/home/components/highlight/Highlight.css';
 
 @tailwind base;
 @tailwind components;

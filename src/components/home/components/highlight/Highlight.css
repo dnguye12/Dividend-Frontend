@@ -1,0 +1,63 @@
+.highlight-block {
+    @apply rounded-lg border border-border p-4 shadow bg-base-950;
+}
+
+.highlight-header {
+    @apply flex justify-between items-center w-full mb-4;
+}
+
+.highlight-header h3 {
+    @apply text-text text-base md:text-lg font-semibold;
+}
+
+.highlight-header button {
+    @apply btn btn btn-ghost rounded shadow-md text-text bg-base-950 border border-border transition-colors duration-300
+}
+
+.highlight-body {
+    @apply overflow-x-auto;
+}
+
+.highlight-body .skeleton-top {
+    @apply skeleton w-full h-[44px] bg-base-900 rounded-none;
+}
+
+.highlight-body .skeleton-odd {
+    @apply skeleton w-full h-[69px] bg-base-900 rounded-none;
+}
+
+.highlight-body .skeleton-even {
+    @apply skeleton w-full h-[69px] bg-base-950 rounded-none;
+}
+
+.highlight-body table {
+    @apply table;
+}
+
+.highlight-body table thead tr {
+    @apply bg-base-900;
+}
+
+.highlight-body table thead tr th {
+    @apply text-text text-sm font-semibold
+}
+
+.highlight-body table tbody tr {
+    @apply transition duration-300 cursor-pointer odd:bg-base-950 even:bg-base-900;
+}
+
+.highlight-body table tbody tr .symbol {
+    @apply text-sm font-semibold text-blue-500
+}
+
+.highlight-body table tbody tr .name {
+    @apply text-text font-semibold
+}
+
+.highlight-body table tbody tr td .price {
+    @apply font-bold mb-1 text-text
+}
+
+.highlight-body table tbody tr td .change {
+    @apply text-sm font-semibold
+}
