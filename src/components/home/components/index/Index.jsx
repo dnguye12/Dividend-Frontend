@@ -178,14 +178,14 @@ const Index = ({ name, ticker }) => {
 
   return (
     <div
-      className="h-36 flex items-center justify-between rounded-lg border border-border p-3 cursor-pointer shadow bg-base-950 hover:bg-neutral-900 hover:scale-105"
+      className="h-36 flex items-center justify-between rounded-lg border border-border p-3 cursor-pointer shadow bg-base-950 hover:bg-base-900 hover:scale-105"
       style={{ transition: "transform 350ms, background-color 350ms" }}
     >
       <div className="flex flex-col items-start justify-start">
         <IndexLogo ticker={ticker} />
         <p
           className=" whitespace-nowrap text-md font-semibold leading-tight text-text"
-          to={`/stock/${ticker}`}
+          to={`/index/${ticker}`}
         >
           {name}
         </p>

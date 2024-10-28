@@ -10,6 +10,7 @@ import "./i18n.js";
 import MenuSide from "./components/menu/MenuSide.jsx";
 import MenuTop from "./components/menu/MenuTop.jsx";
 import Home from "./components/home/Home.jsx";
+import Stock from "./components/stock/Stock.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <div className="bg-base-900 h-full">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path='/stock/:ticker/*' element={<Stock />} />
             </Routes>
         </div>
       </div>

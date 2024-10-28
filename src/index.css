@@ -1,5 +1,6 @@
 @import './components/menu/components/menu.css';
 @import './components/home/components/highlight/Highlight.css';
+@import './components/stock/components/stock.css';
 
 @tailwind base;
 @tailwind components;
@@ -19,4 +20,8 @@ h2 {
 
 .btn {
     @apply transition duration-300 
+}
+
+.skeleton-bg {
+    @apply skeleton bg-base-950 border border-border
 }

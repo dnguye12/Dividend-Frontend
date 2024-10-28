@@ -3,14 +3,6 @@ import Hero from "./components/Hero";
 import Highlight from "./components/highlight/Highlight";
 import Indexes from "./components/index/Indexes";
 
-const IndexHolder = () => {
-  return (
-    <div className="skeleton w-full h-36 bg-base-950 rounded-lg shadow border border-border">
-      Index Holder
-    </div>
-  );
-};
-
 const StockHomeNewsSkeleton = () => {
   return (
     <div className="flex rounded-lg border border-border bg-base-950 p-3">

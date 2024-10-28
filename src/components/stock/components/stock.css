@@ -1,0 +1,15 @@
+.stock-loading-container {
+    @apply w-full h-full flex p-10 py-20;
+}
+
+.stock-loading-left {
+    @apply w-full lg:w-2/3 mt-4 h-full skeleton-bg rounded-lg;
+}
+
+.stock-loading-divider {
+    @apply hidden lg:flex divider divider-horizontal h-full mt-4;
+}
+
+.stock-loading-right {
+    @apply hidden lg:block skeleton w-1/3 mt-4 h-full skeleton-bg rounded-lg;
+}
