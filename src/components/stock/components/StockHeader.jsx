@@ -6,9 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { getStockLogo, getYahooQuoteSummary } from "../../../services/stock"
 import { myToLocaleString, percentageDiff } from "../../../utils/numberUtils"
 import { useTranslation } from "react-i18next"
+import { currToSymbol } from "../../../utils/moneyUtils"
 
 const StockHeader = ({ chartQuote, chartInterval, stockQuote, ticker }) => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const [logoImg, setLogoImage] = useState('')
     const [incomeStatement, setIncomeStatement] = useState(null)
     const [loadIncomeStatement, setLoadIncomeStatement] = useState(true)
@@ -69,24 +70,24 @@ const StockHeader = ({ chartQuote, chartInterval, stockQuote, ticker }) => {
                 {
                     logoImg
                         ?
-                        <div className="avatar mr-2">
-                            <div className="w-10 h-10 rounded-full ">
-                                <img className="bg-base-900 drop-shadow-lg" src={logoImg} alt={ticker} />
+                        <div className="w-10 h-10 bg-avatar rounded-full avatar mr-2 flex justify-center items-center drop-shadow">
+                            <div className="w-8 h-8">
+                                <img src={logoImg} alt={ticker} />
                             </div>
                         </div>
                         :
-                        <div className="avatar placeholder mr-2">
-                            <div className="bg-base-900 w-10 h-10 rounded-full">
+                        <div className="w-10 h-10 bg-avatar rounded-full avatar mr-2 flex justify-center items-center drop-shadow">
+                            <div className="w-8 h-8">
                             </div>
                         </div>
                 }
                 <div>
-                    <p className=" font-bold text-2xl text-text">{stockQuote.longName} ({ticker})</p>
-                    <p className=" text-base">{stockQuote.quoteSourceName} - {stockQuote.currency}</p>
+                    <p className="font-bold text-lg text-text">{stockQuote.longName} ({ticker})</p>
+                    <p className="">{stockQuote.quoteSourceName} - {stockQuote.currency}</p>
                 </div>
             </div>
             <div className="flex items-end px-5 mt-2">
-                <p className=" font-bold text-3xl text-text mr-2">{myToLocaleString(stockQuote.regularMarketPrice)}</p>
+                <p className=" font-bold text-4xl text-text mr-3">{currToSymbol(stockQuote.currency)} {myToLocaleString(stockQuote.regularMarketPrice)}</p>
                 {
                     chartInterval === '1D'
                         ?

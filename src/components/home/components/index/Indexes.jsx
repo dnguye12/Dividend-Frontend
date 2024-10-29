@@ -3,7 +3,7 @@ import Index from "./Index";
 const Indexes = () => {
   return (
     <div>
-      <h1 className="text-text">Markets today</h1>
+      <h1 className="text-text text-2xl">Markets today</h1>
 
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 my-4">
         <Index name="S&P 500" ticker="^GSPC" />

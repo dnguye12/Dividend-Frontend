@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import './components/menu/components/menu.css';
 @import './components/home/components/highlight/Highlight.css';
 @import './components/stock/components/stock.css';
@@ -7,7 +8,11 @@
 @tailwind utilities;
 
 body {
-    @apply text-sm;
+    @apply text-sm font-inter;
+}
+
+p, th, td, a, h1 {
+    @apply text-font-color
 }
 
 h1 {
@@ -19,7 +24,7 @@ h2 {
 }
 
 .btn {
-    @apply transition duration-300 
+    @apply transition duration-300
 }
 
 .skeleton-bg {

@@ -16,6 +16,7 @@ import {
     RangeMax,
 } from "../../utils/timeUtils";
 import StockHeader from "./components/StockHeader";
+import StockAbout from "./components/StockAbout";
 
 const Stock = () => {
     const ticker = useParams().ticker;
@@ -171,6 +172,9 @@ const Stock = () => {
         <div className="w-full flex py-20">
             <div className="w-full lg:w-2/3 my-5 p-5 border-r border-border">
                 <StockHeader chartInterval={chartInterval} chartQuote={chartQuote} ticker={ticker} stockChart={stockChart} stockQuote={stockQuote} />
+            </div>
+            <div className="hidden lg:block w-1/3 p-3">
+                <StockAbout ticker={ticker} stockQuote={stockQuote}/>
             </div>
         </div>
     )

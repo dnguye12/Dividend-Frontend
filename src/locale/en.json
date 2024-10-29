@@ -23,6 +23,33 @@
       "Dividends": "Dividends",
       "HoldersInsiders": "Holders & Insiders",
       "Profile": "Profile"
+    },
+    "About": {
+      "Title": "About {{company}}",
+      "CEO": "CEO",
+      "Industry": "Industry",
+      "Country": "Country",
+      "Sector": "Sector",
+      "Employees": "Employees",
+      "Exchange": "Exchange",
+      "Market-Cap": "Market Cap",
+      "Avg-Volume": "Avg. Volume",
+      "Description": "Description",
+      "Description-Error": "Profile data is currently not available for {{ticker}}.",
+      "Show-More": "Show more",
+      "Website": "Go to website",
+      "AnalystRating": {
+        "Title": "Analyst Rating",
+        "Signal": "Signal",
+        "PriceTarget": "Price Target",
+        "Upside": "The Stock Price has an upside of <0>{{upside}}%</0> based on <1>{{analysts}}</1> analysts in the past month.",
+        "Downside": "The Stock Price has a downside of {{downside}}% based on {{analysts}} analysts in the past month.",
+        "Buy": "Buy",
+        "Hold": "Hold",
+        "Sell": "Sell",
+        "AnalystRatings": "Analyst Ratings",
+        "Error": "Analyst info is currently not available for {{ticker}}"
+      }
     }
   }
 }
