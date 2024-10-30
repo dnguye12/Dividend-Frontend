@@ -42,3 +42,11 @@
 .stock-about .similar-table thead th {
     @apply font-medium text-sm
 }
+
+.stock-stat .table tbody tr th {
+    @apply font-medium
+}
+
+.stock-stat .table tbody tr td span {
+    @apply text-text
+}

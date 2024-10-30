@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useTranslation, Trans } from "react-i18next";
 import { getYahooNews } from "../../../../../services/stock";
 import moment from "moment"
 
@@ -21,6 +22,7 @@ const StockHomeNewsSkeleton = () => {
 
 /* eslint-disable react/prop-types */
 const StockHomeNews = ({ ticker }) => {
+    const { t } = useTranslation()
     const [isLoading, setIsLoading] = useState(true)
     const [news, setNews] = useState(null)
 
@@ -63,7 +65,10 @@ const StockHomeNews = ({ ticker }) => {
 
     return (
         <div className="bg-base-950 border border-border rounded p-4 mt-4">
-            <h2 className="text-text text-lg font-bold mb-3">Recent News: {ticker}</h2>
+            <h2 className="text-text text-lg font-bold mb-3">
+                <Trans i18nKey="Stock.Home.News.RecentNews" values={{
+                    ticker: ticker.toUpperCase()
+                }}></Trans></h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
                 {
@@ -85,7 +90,7 @@ const StockHomeNews = ({ ticker }) => {
                     ))
                 }
             </div>
-            <Link className="my-btn w-full" to={`/stock/${ticker}/news`}><FontAwesomeIcon icon="fa-solid fa-newspaper" className="mr-1" />Load more news</Link>
+            <Link className="my-btn w-full" to={`/stock/${ticker}/news`}><FontAwesomeIcon icon="fa-solid fa-newspaper" className="mr-1" />{t('Stock.Home.News.Load-More')}</Link>
         </div>
     )
 }

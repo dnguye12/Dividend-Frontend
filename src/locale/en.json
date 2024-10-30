@@ -43,7 +43,7 @@
         "Signal": "Signal",
         "PriceTarget": "Price Target",
         "Upside": "The Stock Price has an upside of <0>{{upside}}%</0> based on <1>{{analysts}}</1> analysts in the past month.",
-        "Downside": "The Stock Price has a downside of {{downside}}% based on {{analysts}} analysts in the past month.",
+        "Downside": "The Stock Price has a downside of <0>{{downside}}%</0> based on <1>{{analysts}}</1> analysts in the past month.",
         "Buy": "Buy",
         "Hold": "Hold",
         "Sell": "Sell",
@@ -55,6 +55,36 @@
         "Company": "Company",
         "Price": "Price",
         "Change": "Change"
+      }
+    },
+    "Home": {
+      "Stats": {
+        "PreviousClose": "Previous Close",
+        "DaysRange": "Day's Range",
+        "Open": "Open",
+        "FiftyTwoWeekRange": "52 Week Range",
+        "ForwardDividendAndYield": "Forward Dividend & Yield",
+        "DividendDate": "Dividend Date",
+        "Volume": "Volume",
+        "AvgVolume": "Avg. Volume",
+        "PERatioTTM": "PE Ratio (TTM)",
+        "MarketCap": "Market Cap",
+        "EarningsDate": "Earnings Date",
+        "Beta5YMonthly": "Beta (5Y Monthly)",
+        "Bid": "Bid",
+        "Ask": "Ask",
+        "EPSTTM": "EPS (TTM)",
+        "OneYearTargetEst": "1y Target Est"
+      },
+      "UpSell": {
+        "Title": "Bull Case vs Bear Case",
+        "Description": "Before investing, you should consider both sides. We provide analyst report summaries that highlight the positive and negative perspectives on {{ticker}}.",
+        "UpdatedOn": "Updated on {{date}}",
+        "NoData": "No analyst report summaries available for <0>{{ticker}}</0>."
+      },
+      "News": {
+        "RecentNews": "Recent News: {{ticker}}",
+        "Load-More": "Load more news"
       }
     }
   }

@@ -19,6 +19,8 @@ import StockHeader from "./components/StockHeader";
 import StockAbout from "./components/stockabout/StockAbout";
 import StockHome from "./components/stockhome/StockHome";
 import StockNews from "./components/stocknews/StockNews";
+import StockFinancials from "./components/stockfinancials/StockFinancials";
+import StockStatistics from "./components/stockstatistics/StockStatistics";
 
 const Stock = () => {
     const ticker = useParams().ticker;
@@ -180,6 +182,8 @@ const Stock = () => {
                 <Routes>
                     <Route path='/' element={<StockHome chartInterval={chartInterval} chartQuote={chartQuote} stockChart={stockChart} setChartInterval={setChartInterval} stockQuote={stockQuote} stockSummary={stockSummary} ticker={ticker} />} />
                     <Route path='news' element={<StockNews ticker={ticker} />} />
+                    <Route path='financials/*' element={<StockFinancials ticker={ticker} stockQuote={stockQuote}/>} />
+                    <Route path='statistics/*' element={<StockStatistics ticker={ticker} stockQuote={stockQuote} />} />
                 </Routes>
             </div>
             <div className="hidden lg:block w-1/3 p-3">

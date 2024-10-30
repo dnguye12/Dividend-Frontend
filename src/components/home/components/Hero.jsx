@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="hero-overlay bg-black bg-opacity-60"></div>
       <div className="hero-content text-center">
         <div className="max-w-lg">
-          <h1 className="mb-5 text-6xl text-white font-bold">
+          <h1 className="mb-5 text-6xl text-text font-bold">
             Dividend Insight
           </h1>
           <p className="mb-5">

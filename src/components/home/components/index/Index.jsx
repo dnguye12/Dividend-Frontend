@@ -48,7 +48,7 @@ const IndexLogo = ({ ticker }) => {
 
   return (
     <p
-      className="text-base text-white font-semibold rounded-full p-1.5 mb-1.5 w-10 h-10 flex justify-center items-center shadow-md"
+      className="text-base text-text font-semibold rounded-full p-1.5 mb-1.5 w-10 h-10 flex justify-center items-center shadow-md"
       style={{ backgroundColor: logoColor }}
     >
       {number}

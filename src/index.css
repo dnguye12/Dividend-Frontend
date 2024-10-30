@@ -28,5 +28,5 @@ h2 {
 }
 
 .skeleton-bg {
-    @apply skeleton bg-base-950 border border-border
+    @apply skeleton bg-base-950 border border-border shadow rounded
 }

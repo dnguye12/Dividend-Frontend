@@ -31,8 +31,8 @@ const StockNews = ({ ticker }) => {
 
     if (isLoading) {
         return (
-            <div className="bg-neutral-950 border border-neutral-700 rounded p-4 mt-4">
-                <h2 className="text-white text-lg font-bold mb-3">Recent News: {ticker}</h2>
+            <div className="bg-base-950 border border-border rounded p-4 mt-4">
+                <h2 className="text-text text-lg font-bold mb-3">Recent News: {ticker}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <StockNewsSkeleton />
                     <StockNewsSkeleton />
@@ -50,14 +50,14 @@ const StockNews = ({ ticker }) => {
     }
 
     return (
-        <div className="bg-neutral-950 border border-neutral-700 rounded p-4 mt-7">
-            <h2 className="text-white text-lg font-bold mb-3">Recent News: {ticker}</h2>
+        <div className="bg-base-950 border border-border rounded p-4 mt-7">
+            <h2 className="text-text text-lg font-bold mb-3">Recent News: {ticker}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
                 {
                     news.news.sort((a, b) => new Date(b.providerPublishTime) - new Date(a.providerPublishTime)).map(n => (
-                        <div key={n.uuid} className="flex rounded border border-neutral-700 p-3">
+                        <div key={n.uuid} className="flex rounded border border-border p-3">
                             <div className="w-full flex flex-col pr-2">
-                                <a href={n.link} target="_blank" className="text-white font-semibold text-sm mb-1 hover:text-blue-500 transition duration-300">{n.title}</a>
+                                <a href={n.link} target="_blank" className="text-text font-semibold text-sm mb-1 hover:text-blue-500 transition duration-300">{n.title}</a>
                                 <p className="text-sm mb-1">{n.publisher} - {moment(n.providerPublishTime).format('MMM Do, YYYY')}</p>
                                 <div>
                                     {n.relatedTickers &&
@@ -72,7 +72,7 @@ const StockNews = ({ ticker }) => {
                                     ? n.thumbnail.resolutions[1]
                                         ? <img src={n.thumbnail.resolutions[1].url} className="rounded drop-shadow max-w-28 w-28 min-w-28" />
                                         : <img src={n.thumbnail.resolutions[0].url} className="rounded drop-shadow max-w-28 w-28 min-w-28" />
-                                    : <div className="rounded drop-shadow border border-neutral-700 w-28 h-28 flex justify-center items-center text-2xl"><FontAwesomeIcon icon="fa-regular fa-image" /></div>
+                                    : <div className="rounded drop-shadow border border-border w-28 h-28 flex justify-center items-center text-2xl"><FontAwesomeIcon icon="fa-regular fa-image" /></div>
                                 }
                             </div>
                         </div>

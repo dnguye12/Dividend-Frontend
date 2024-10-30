@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { getYahooInsights } from "../../../../../services/stock";
 import moment from 'moment';
+import { Trans, useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 const StockUpSell = ({ ticker }) => {
+    const { t } = useTranslation()
     const [stockInsights, setStockInsights] = useState(null)
 
     useEffect(() => {
@@ -29,13 +31,18 @@ const StockUpSell = ({ ticker }) => {
 
     return (
         <div className="bg-base-950 border border-border rounded p-4 mt-4 shadow">
-            <h2 className="text-text text-lg font-bold mb-3">Bull Case vs Bear Case</h2>
+            <h2 className="text-text text-lg font-bold mb-3">{t("Stock.Home.UpSell.Title")}</h2>
             {(stockInsights && stockInsights.upsell && stockInsights.upsell.msBullishSummary)
                 ?
                 <>
-                    <p className="text-sm mb-3">Before investing, you should consider both sides. We provide analyst report summaries that
-                        highlight the positive and negative perspectives on {ticker}.</p>
-                    <p className="text-end italic text-sm mb-3">Updated on {moment(stockInsights.upsell.msBullishBearishSummariesPublishDate).format("MMM Do YYYY")}</p>
+                    <p className="text-sm mb-3">
+                        <Trans i18nKey="Stock.Home.UpSell.Description" values={{
+                            ticker: ticker
+                        }}></Trans></p>
+                    <p className="text-end italic text-sm mb-3">
+                        <Trans i18nKey="Stock.Home.UpSell.UpdatedOn" values={{
+                            date: moment(stockInsights.upsell.msBullishBearishSummariesPublishDate).format("MMM Do YYYY")
+                        }}></Trans></p>
                     <ul className="w-full px-3 py-1 border-l-4 border-l-up mb-3">
                         {
                             stockInsights.upsell.msBullishSummary.map((sum, idx) => (
@@ -54,7 +61,16 @@ const StockUpSell = ({ ticker }) => {
                 </>
                 :
                 <>
-                    <p className="text-base">No analyst report summaries available for <span className="text-text font-semibold">{ticker}</span>.</p>
+                    <p className="text-base">
+                        <Trans
+                            i18nKey="Stock.Home.UpSell.NoData"
+                            values={{
+                                ticker: ticker
+                            }}
+                            components={[
+                                <span className="text-text font-semibold" />
+                            ]}
+                        /></p>
                 </>
             }
         </div>

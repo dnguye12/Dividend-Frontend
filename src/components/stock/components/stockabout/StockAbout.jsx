@@ -145,7 +145,7 @@ const StockAbout = ({ ticker, stockQuote }) => {
                 </div>
             </div>
 
-            {financialData ?
+            {financialData && trend ?
                 <div className="bg-base-950 border border-border rounded p-4 mt-4 shadow">
                     <h2 className="text-text text-lg font-bold mb-4">{t('Stock.About.AnalystRating.Title')}</h2>
                     <div className="flex justify-between my-4">
