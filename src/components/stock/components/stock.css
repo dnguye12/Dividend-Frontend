@@ -1,3 +1,7 @@
+.my-btn {
+    @apply btn bg-base-900 hover:bg-base-800 text-font-color hover:text-text border border-border shadow;
+}
+
 .stock-loading-container {
     @apply w-full h-full flex p-10 py-20;
 }
@@ -16,7 +20,7 @@
 
 .stock-header .navbar .btn,
 .stock-stats .navbar .btn {
-    @apply rounded-none transition duration-300 border-b-2 border-b-base-900 text-font-color
+    @apply rounded-none transition duration-300 border-b-2 border-b-base-950 text-font-color
 }
 
 .stock-stat .navbar .btn {
@@ -24,7 +28,7 @@
 }
 
 .stock-header .navbar .btn.active, .stock-stat .navbar .btn.active, .stock-finance .navbar .btn.active {
-    @apply text-text border-b-2 border-b-up
+    @apply text-text border-b-2 border-b-up bg-base-900 rounded shadow
 }
 
 .stock-about .about-table th {

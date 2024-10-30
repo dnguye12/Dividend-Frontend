@@ -8,6 +8,7 @@ export default {
         inter: ["Inter", 'sans-serif'],
       },
       colors: {
+        "base-800": "rgba(var(--base-800), <alpha-value>)",
         "base-900": "rgba(var(--base-900), <alpha-value>)",
         "base-950": "rgba(var(--base-950), <alpha-value>)",
         "font-color": "rgba(var(--font-color), <alpha-value>)",
@@ -26,6 +27,7 @@ export default {
       {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
+          "--base-800": "212, 212, 212",
           "--base-900": "229, 229, 229",
           "--base-950": "245, 245, 245",
           "--avatar": "24, 24, 27",
@@ -38,6 +40,7 @@ export default {
       {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
+          "--base-800": "38, 38, 38",
           "--base-900": "24, 24, 27",
           "--base-950": "10, 10, 10",
           "--avatar": "24, 24, 27",

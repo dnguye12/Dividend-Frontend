@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import {
     getYahooQuote,
     getYahooChart,
@@ -16,7 +16,9 @@ import {
     RangeMax,
 } from "../../utils/timeUtils";
 import StockHeader from "./components/StockHeader";
-import StockAbout from "./components/StockAbout";
+import StockAbout from "./components/stockabout/StockAbout";
+import StockHome from "./components/stockhome/StockHome";
+import StockNews from "./components/stocknews/StockNews";
 
 const Stock = () => {
     const ticker = useParams().ticker;
@@ -26,6 +28,7 @@ const Stock = () => {
     const [loadingStockQuote, setLoadingStockQuote] = useState(true);
 
     const [stockChart, setStockChart] = useState(null);
+    const [loadingStockChart, setLoadingStockChart] = useState(true);
 
     // Interval of chart
     const [chartInterval, setChartInterval] = useState("1D");
@@ -106,6 +109,7 @@ const Stock = () => {
                             data = await getYahooChart(ticker, period1, period2, "1wk");
                         }
                         setStockChart(data);
+                        setLoadingStockChart(false)
                     }
                 }
             }
@@ -152,10 +156,10 @@ const Stock = () => {
     }, [ticker]);
 
     useEffect(() => {
-        if (!loadingStockQuote && !loadingStockSummary) {
+        if (!loadingStockQuote && !loadingStockSummary && !loadingStockChart) {
             setIsLoading(false);
         }
-    }, [loadingStockQuote, loadingStockSummary])
+    }, [loadingStockQuote, loadingStockSummary, loadingStockChart])
 
     if (isloading) {
         return (
@@ -172,9 +176,14 @@ const Stock = () => {
         <div className="w-full flex py-20">
             <div className="w-full lg:w-2/3 my-5 p-5 border-r border-border">
                 <StockHeader chartInterval={chartInterval} chartQuote={chartQuote} ticker={ticker} stockChart={stockChart} stockQuote={stockQuote} />
+
+                <Routes>
+                    <Route path='/' element={<StockHome chartInterval={chartInterval} chartQuote={chartQuote} stockChart={stockChart} setChartInterval={setChartInterval} stockQuote={stockQuote} stockSummary={stockSummary} ticker={ticker} />} />
+                    <Route path='news' element={<StockNews ticker={ticker} />} />
+                </Routes>
             </div>
             <div className="hidden lg:block w-1/3 p-3">
-                <StockAbout ticker={ticker} stockQuote={stockQuote}/>
+                <StockAbout ticker={ticker} stockQuote={stockQuote} />
             </div>
         </div>
     )

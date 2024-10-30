@@ -49,6 +49,12 @@
         "Sell": "Sell",
         "AnalystRatings": "Analyst Ratings",
         "Error": "Analyst info is currently not available for {{ticker}}"
+      },
+      "SimilarStocks": {
+        "Title": "Similar Stocks",
+        "Company": "Company",
+        "Price": "Price",
+        "Change": "Change"
       }
     }
   }

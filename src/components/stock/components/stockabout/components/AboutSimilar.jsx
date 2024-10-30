@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 
-import { getStockLogo, getYahooQuote } from "../../../services/stock"
+import { getStockLogo, getYahooQuote } from "../../../../../services/stock"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { myToLocaleString } from "../../../utils/numberUtils"
-import { currToSymbol } from "../../../utils/moneyUtils"
-import { truncateText } from "../../../utils/textUtils"
+import { myToLocaleString } from "../../../../../utils/numberUtils"
+import { currToSymbol } from "../../../../../utils/moneyUtils"
+import { truncateText } from "../../../../..//utils/textUtils"
 
 const AboutSimilar = ({ ticker }) => {
     const [stockQuote, setStockQuote] = useState('')
@@ -67,7 +67,7 @@ const AboutSimilar = ({ ticker }) => {
     }
 
     return (
-        <tr className="hover cursor-pointer transition duration-300" onClick={() => {
+        <tr className="hover cursor-pointer transition duration-300 border-b-border" onClick={() => {
             navigate(`/stock/${ticker}`)
         }}>
             <td>

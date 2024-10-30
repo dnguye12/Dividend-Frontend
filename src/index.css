@@ -11,7 +11,7 @@ body {
     @apply text-sm font-inter;
 }
 
-p, th, td, a, h1 {
+p, th, td, a, button, h1 {
     @apply text-font-color
 }
 

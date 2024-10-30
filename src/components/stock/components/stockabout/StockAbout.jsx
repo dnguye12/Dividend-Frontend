@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation, Trans } from "react-i18next";
 
-import { getYahooQuoteSummary, getYahooRecommendationBySymbol } from "../../../services/stock"
-import { formatNumber, percentageDiff } from "../../../utils/numberUtils"
-import { formatMarketCap, currToSymbol } from "../../../utils/moneyUtils"
-import { capitalizeWord } from "../../../utils/textUtils";
+import { getYahooQuoteSummary, getYahooRecommendationBySymbol } from "../../../../services/stock"
+import { formatNumber, percentageDiff } from "../../../../utils/numberUtils"
+import { formatMarketCap, currToSymbol } from "../../../../utils/moneyUtils"
+import { capitalizeWord } from "../../../../utils/textUtils";
 
-import AboutSimilar from "./AboutSimilar";
+import AboutSimilar from "./components/AboutSimilar";
 
 const StockAbout = ({ ticker, stockQuote }) => {
     const { t } = useTranslation();
@@ -71,27 +71,61 @@ const StockAbout = ({ ticker, stockQuote }) => {
                 </h2>
 
                 <table className="table about-table">
-                    <tr>
+                    <tr className="hidden 2xl:table-row">
                         <th>{t('Stock.About.CEO')}</th>
                         <td>{assetProfile && assetProfile.companyOfficers && assetProfile.companyOfficers.length > 0 ? assetProfile.companyOfficers[0].name : '-'}</td>
                         <th>{t('Stock.About.Industry')}</th>
                         <td>{assetProfile && (assetProfile.industry || '-')}</td>
                     </tr>
-                    <tr>
+                    <tr className="hidden 2xl:table-row">
                         <th>{t('Stock.About.Country')}</th>
                         <td>{stockQuote.region || '-'}</td>
                         <th>{t('Stock.About.Sector')}</th>
                         <td>{assetProfile && (assetProfile.sector || '-')}</td>
                     </tr>
-                    <tr>
+                    <tr className="hidden 2xl:table-row">
                         <th>{t('Stock.About.Employees')}</th>
                         <td>{assetProfile && (assetProfile.fullTimeEmployees ? formatNumber(assetProfile.fullTimeEmployees) : '-')}</td>
                         <th>{t('Stock.About.Exchange')}</th>
                         <td>{stockQuote.fullExchangeName || '-'}</td>
                     </tr>
-                    <tr>
+                    <tr className="hidden 2xl:table-row">
                         <th>{t('Stock.About.Market-Cap')}</th>
                         <td>{stockQuote.marketCap ? formatMarketCap(stockQuote.marketCap, stockQuote.currency) : '-'}</td>
+                        <th>{t('Stock.About.Avg-Volume')}</th>
+                        <td>{stockQuote.regularMarketVolume ? formatMarketCap(stockQuote.regularMarketVolume, stockQuote.currency) : '-'}</td>
+                    </tr>
+
+
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.CEO')}</th>
+                        <td>{assetProfile && assetProfile.companyOfficers && assetProfile.companyOfficers.length > 0 ? assetProfile.companyOfficers[0].name : '-'}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.Country')}</th>
+                        <td>{stockQuote.region || '-'}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.Exchange')}</th>
+                        <td>{stockQuote.fullExchangeName || '-'}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.Industry')}</th>
+                        <td>{assetProfile && (assetProfile.industry || '-')}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.Sector')}</th>
+                        <td>{assetProfile && (assetProfile.sector || '-')}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.Employees')}</th>
+                        <td>{assetProfile && (assetProfile.fullTimeEmployees ? formatNumber(assetProfile.fullTimeEmployees) : '-')}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
+                        <th>{t('Stock.About.Market-Cap')}</th>
+                        <td>{stockQuote.marketCap ? formatMarketCap(stockQuote.marketCap, stockQuote.currency) : '-'}</td>
+                    </tr>
+                    <tr className="table-col 2xl:hidden">
                         <th>{t('Stock.About.Avg-Volume')}</th>
                         <td>{stockQuote.regularMarketVolume ? formatMarketCap(stockQuote.regularMarketVolume, stockQuote.currency) : '-'}</td>
                     </tr>
@@ -114,7 +148,7 @@ const StockAbout = ({ ticker, stockQuote }) => {
             {financialData ?
                 <div className="bg-base-950 border border-border rounded p-4 mt-4 shadow">
                     <h2 className="text-text text-lg font-bold mb-4">{t('Stock.About.AnalystRating.Title')}</h2>
-                    <div className="flex justify-between mb-4">
+                    <div className="flex justify-between my-4">
                         <div>
                             <p className="font-semibold mb-1">{t('Stock.About.AnalystRating.Signal')}</p>
                             <p className={`font-semibold text-base ${financialData.recommendationKey.toLowerCase().includes('buy') ? 'text-up' : financialData.recommendationKey.toLowerCase().includes('sell') ? 'text-down' : 'text-hold'}`}>{capitalizeWord(financialData.recommendationKey)}</p>
@@ -177,7 +211,7 @@ const StockAbout = ({ ticker, stockQuote }) => {
                             </div>
                             <progress className="progress progress-warning w-full" value={(trend.hold)} max={totalTrend}></progress>
                         </div>
-                        <div className="flex flex-col mb-10">
+                        <div className="flex flex-col">
                             <div className="flex justify-between mb-2">
                                 <p className="font-semibold text-text">{t('Stock.About.AnalystRating.Sell')}</p>
                                 <p className="font-semibold text-text">{(trend.strongSell && trend.sell) ? ((trend.strongSell + trend.sell) / totalTrend * 100).toFixed(2) + '%' : "-"}</p>
@@ -185,7 +219,7 @@ const StockAbout = ({ ticker, stockQuote }) => {
                             <progress className="progress progress-error w-full" value={(trend.strongSell + trend.sell)} max={totalTrend}></progress>
                         </div>
                     </div>
-                    <Link className="my-btn w-full mt-10" to={`/stock/${ticker}/analyst-ratings`}>{t('Stock.About.AnalystRating.AnalystRatings')}</Link>
+                    <Link className="my-btn w-full mt-4" to={`/stock/${ticker}/analyst-ratings`}>{t('Stock.About.AnalystRating.AnalystRatings')}</Link>
                 </div>
                 :
                 <div className="bg-base-950 border border-border rounded p-4 mt-4">
@@ -195,13 +229,13 @@ const StockAbout = ({ ticker, stockQuote }) => {
             }
 
             <div className="bg-base-950 border border-border rounded p-4 mt-4 shadow">
-                <h2 className="text-text text-lg font-bold mb-3">Similar Stocks</h2>
+                <h2 className="text-text text-lg font-bold mb-3">{t('Stock.About.SimilarStocks.Title')}</h2>
                 <table className="table similar-table">
                     <thead>
                         <tr>
-                            <th>Company</th>
-                            <th>Price</th>
-                            <th>Change</th>
+                            <th className="border border-x-base-950 border-t-base-950 border-b-border">{t('Stock.About.SimilarStocks.Company')}</th>
+                            <th className="border border-x-base-950 border-t-base-950 border-b-border">{t('Stock.About.SimilarStocks.Price')}</th>
+                            <th className="border border-x-base-950 border-t-base-950 border-b-border">{t('Stock.About.SimilarStocks.Change')}</th>
                         </tr>
                     </thead>
                     <tbody>

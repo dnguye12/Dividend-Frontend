@@ -18,7 +18,7 @@ function App() {
       <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content min-h-screen">
         <MenuTop />
-        <div className="bg-base-900 h-full">
+        <div className="bg-base-950 h-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path='/stock/:ticker/*' element={<Stock />} />
