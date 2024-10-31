@@ -21,6 +21,8 @@ import StockHome from "./components/stockhome/StockHome";
 import StockNews from "./components/stocknews/StockNews";
 import StockFinancials from "./components/stockfinancials/StockFinancials";
 import StockStatistics from "./components/stockstatistics/StockStatistics";
+import StockOptions from "./components/stockoptions/StockOptions";
+import StockAnalystRating from "./components/stockanalystrating/StockAnalystRating";
 
 const Stock = () => {
     const ticker = useParams().ticker;
@@ -184,6 +186,8 @@ const Stock = () => {
                     <Route path='news' element={<StockNews ticker={ticker} />} />
                     <Route path='financials/*' element={<StockFinancials ticker={ticker} stockQuote={stockQuote}/>} />
                     <Route path='statistics/*' element={<StockStatistics ticker={ticker} stockQuote={stockQuote} />} />
+                    <Route path='options' element={<StockOptions ticker={ticker}/>} />
+                    <Route path='analyst-ratings' element={<StockAnalystRating ticker={ticker} stockQuote={stockQuote} />} />
                 </Routes>
             </div>
             <div className="hidden lg:block w-1/3 p-3">

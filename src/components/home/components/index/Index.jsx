@@ -48,7 +48,7 @@ const IndexLogo = ({ ticker }) => {
 
   return (
     <p
-      className="text-base text-text font-semibold rounded-full p-1.5 mb-1.5 w-10 h-10 flex justify-center items-center shadow-md"
+      className="text-base text-white font-semibold rounded-full p-1.5 mb-1.5 w-12 h-12 flex justify-center items-center shadow-md"
       style={{ backgroundColor: logoColor }}
     >
       {number}
@@ -193,7 +193,7 @@ const Index = ({ name, ticker }) => {
           ${myToLocaleString(quotes.meta.regularMarketPrice)}
         </p>
         {startValue &&
-          endValue &&
+          endValue ?
           (startValue < endValue ? (
             <p className="text-sm font-semibold flex items-center text-up">
               <FontAwesomeIcon className="mr-2" icon="fa-solid fa-caret-up" />{" "}
@@ -204,7 +204,10 @@ const Index = ({ name, ticker }) => {
               <FontAwesomeIcon className="mr-2" icon="fa-solid fa-caret-down" />{" "}
               {(((startValue - endValue) / startValue) * 100).toFixed(2)}%
             </p>
-          ))}
+          ))
+        : (
+          <p className="text-sm font-semibold flex items-center text-text">-</p>
+        )}
       </div>
       <div className="w-full ps-3">
         <IndexChart data={myData} prevClose={startValue}></IndexChart>
