@@ -28,8 +28,8 @@ const AnalystPriceTargets = ({ stockQuote, stockSummary }) => {
     let helper2 = ((targetMeanPrice - targetLowPrice) / (targetHighPrice - targetLowPrice)) * 100
 
     return (
-        <div className="my-analysis bg-neutral-950 border border-neutral-700 rounded p-4 sm:min-w-96">
-            <h3 className="font-semibold text-white mb-3">{t('Stock.Analyst-Ratings.Price-Targets.Analyst Price Targets')}</h3>
+        <div className="my-analysis bg-base-950 border border-border rounded p-4 sm:min-w-96">
+            <h3 className="font-semibold text-text mb-3">{t('Stock.Analyst-Ratings.Price-Targets.Analyst Price Targets')}</h3>
             <div className="hidden sm:block w-full relative min-h-32 mb-5">
                 <div className="my-bar"></div>
                 <div className="priceContainer priceContainerLow left-0">
@@ -78,8 +78,8 @@ const AnalystPriceTargets = ({ stockQuote, stockSummary }) => {
                 </div>
             </div>
             <div className="pt-5">
-                <h4 className="font-semibold text-white mb-3">{t('Stock.Analyst-Ratings.Price-Targets.Percentage diff')}</h4>
-                <table className="table table-sm border border-neutral-700 rounded-lg">
+                <h4 className="font-semibold text-text mb-3">{t('Stock.Analyst-Ratings.Price-Targets.Percentage diff')}</h4>
+                <table className="table table-sm border border-border rounded-lg">
                     <thead>
                         <tr>
                             <th>{t('Stock.Analyst-Ratings.Price-Targets.Current Price')}</th>

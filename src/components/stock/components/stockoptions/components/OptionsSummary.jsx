@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const OptionsSummary = ({ticker, summaryData}) => {
     return (
-        <div className=" bg-neutral-950 border border-neutral-700 rounded p-4 mt-4">
-            <h2 className="text-white text-lg font-bold mb-3">{ticker} Options Activity</h2>
+        <div className=" bg-base-950 border border-border rounded p-4 mt-4 shadow">
+            <h2 className="text-text text-lg font-bold mb-3">{ticker} Options Activity</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col items-start border border-neutral-700 rounded p-4">
-                    <button onClick={() => document.getElementById('my-options-totalVolume').showModal()}><h3 className="text-sm text-white font-semibold mb-2">Total Volume<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
-                    <p className="text-white font-semibold">{summaryData.totalVolume.toLocaleString()}</p>
+                <div className="flex flex-col items-start border border-border rounded p-4 shadow">
+                    <button onClick={() => document.getElementById('my-options-totalVolume').showModal()}><h3 className="text-sm text-text font-semibold mb-2">Total Volume<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
+                    <p className="text-text font-semibold">{summaryData.totalVolume.toLocaleString()}</p>
                     <dialog id="my-options-totalVolume" className="modal">
                         <div className="modal-box">
                             <h3 className="text-lg font-bold">Total Volume</h3>
@@ -21,9 +21,9 @@ const OptionsSummary = ({ticker, summaryData}) => {
                     </dialog>
                 </div>
 
-                <div className="flex flex-col items-start border border-neutral-700 rounded p-4">
-                    <button onClick={() => document.getElementById('my-options-totalIO').showModal()}><h3 className="text-sm text-white font-semibold mb-2">Total OI<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
-                    <p className="text-white font-semibold">{summaryData.totalOI.toLocaleString()}</p>
+                <div className="flex flex-col items-start border border-border rounded p-4 shadow">
+                    <button onClick={() => document.getElementById('my-options-totalIO').showModal()}><h3 className="text-sm text-text font-semibold mb-2">Total OI<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
+                    <p className="text-text font-semibold">{summaryData.totalOI.toLocaleString()}</p>
                     <dialog id="my-options-totalIO" className="modal">
                         <div className="modal-box">
                             <h3 className="text-lg font-bold">Total OI</h3>
@@ -34,9 +34,9 @@ const OptionsSummary = ({ticker, summaryData}) => {
                         </form>
                     </dialog>
                 </div>
-                <div className="flex flex-col items-start border border-neutral-700 rounded p-4">
-                    <button onClick={() => document.getElementById('my-options-pcRatio').showModal()}><h3 className="text-sm text-white font-semibold mb-2">P/C Ratio<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
-                    <p className="text-white font-semibold">{summaryData.PCratios.toFixed(2)}</p>
+                <div className="flex flex-col items-start border border-border rounded p-4 shadow">
+                    <button onClick={() => document.getElementById('my-options-pcRatio').showModal()}><h3 className="text-sm text-text font-semibold mb-2">P/C Ratio<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
+                    <p className="text-text font-semibold">{summaryData.PCratios.toFixed(2)}</p>
                     <dialog id="my-options-pcRatio" className="modal">
                         <div className="modal-box">
                             <h3 className="text-lg font-bold">P/C Ratio</h3>
@@ -47,9 +47,9 @@ const OptionsSummary = ({ticker, summaryData}) => {
                         </form>
                     </dialog>
                 </div>
-                <div className="flex flex-col items-start border border-neutral-700 rounded p-4">
-                    <button onClick={() => document.getElementById('my-options-oipcRatio').showModal()}><h3 className="text-sm text-white font-semibold mb-2">OI P/C Ratio<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
-                    <p className="text-white font-semibold">{summaryData.OIPCratios.toFixed(2)}</p>
+                <div className="flex flex-col items-start border border-border rounded p-4 shadow">
+                    <button onClick={() => document.getElementById('my-options-oipcRatio').showModal()}><h3 className="text-sm text-text font-semibold mb-2">OI P/C Ratio<FontAwesomeIcon icon="fa-regular fa-circle-question" className="ms-1 sm:ms-2" /></h3></button>
+                    <p className="text-text font-semibold">{summaryData.OIPCratios.toFixed(2)}</p>
                     <dialog id="my-options-oipcRatio" className="modal">
                         <div className="modal-box">
                             <h3 className="text-lg font-bold">OI P/C Ratio</h3>

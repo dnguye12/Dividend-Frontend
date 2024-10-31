@@ -66,13 +66,13 @@ const AnalystUpgradesDowngrades = ({ stockSummary }) => {
 
 
     return (
-        <div className="my-analysis bg-neutral-950 border border-neutral-700 rounded p-4">
-            <h3 className="font-semibold text-white mb-3">{t('Stock.Analyst-Ratings.Upgrades-Downgrades.Upgrades & Downgrades')}</h3>
+        <div className="my-analysis bg-base-950 border border-border rounded p-4">
+            <h3 className="font-semibold text-text mb-3">{t('Stock.Analyst-Ratings.Upgrades-Downgrades.Upgrades & Downgrades')}</h3>
             <div className="w-full flex flex-col justify-center">
                 {
                     !loadMore
                         ?
-                        <table className="table table-sm sm:table-md border border-neutral-700 rounded-lg mb-5">
+                        <table className="table table-sm sm:table-md border border-border rounded-lg mb-5">
                             <thead>
                                 <tr>
                                     <th>{t('Stock.Analyst-Ratings.Upgrades-Downgrades.Date')}</th>
@@ -118,7 +118,7 @@ const AnalystUpgradesDowngrades = ({ stockSummary }) => {
                                 </div>
                             }
                         >
-                            <table className="table table-sm sm:table-md border border-neutral-700 rounded-lg mb-5">
+                            <table className="table table-sm sm:table-md border border-border rounded-lg mb-5">
                                 <thead>
                                     <tr>
                                         <th>Date</th>

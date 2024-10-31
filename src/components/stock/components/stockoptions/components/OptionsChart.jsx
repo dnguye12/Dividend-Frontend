@@ -113,7 +113,7 @@ const OptionsChart = ({ ticker, optionsDates, stockOptions }) => {
     };
 
     return (
-        <div className="hidden md:block relative stock-options bg-neutral-950 border border-neutral-700 rounded p-4 mt-4 w-full h-[600px]">
+        <div className="hidden md:block relative stock-options bg-base-950 border border-border rounded p-4 mt-4 w-full h-[600px]">
             <Bar data={data} options={options} />
         </div>
     )

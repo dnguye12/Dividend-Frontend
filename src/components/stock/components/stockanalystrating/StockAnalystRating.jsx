@@ -10,25 +10,30 @@ import AnalystOverview from "./components/AnalystOverview"
 
 const StockAnalystRating = ({ticker, stockQuote}) => {
     const [stockSummary, setStockSummary] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await getYahooQuoteSummary(ticker, ['financialData', 'recommendationTrend', 'upgradeDowngradeHistory'])
                 setStockSummary(data)
+                setIsLoading(false)
             } catch (error) {
                 console.log("Stock getting quote error: ", error)
+                return (
+                    <div className="bg-base-950 border border-border rounded p-4 border-spacing-10 mt-7">
+                        <p className="text-center text-text text-lg font-semibold">Analyst info is currently not available for {ticker}.</p>
+                    </div>
+                )
             }
         }
 
         fetchData()
     }, [ticker])
 
-    if (!stockSummary) {
+    if (isLoading) {
         return (
-            <div className="bg-neutral-950 border border-neutral-700 rounded p-4 border-spacing-10">
-                <p className="text-center text-white text-lg font-semibold">Analyst info is currently not available for {ticker}.</p>
-            </div>
+            <div className="w-full h-full skeleton-bg mt-4"></div>
         )
     }
 

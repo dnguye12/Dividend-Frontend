@@ -179,13 +179,13 @@ const AnalystRec = ({ stockSummary }) => {
     };
     
     return (
-        <div className="my-analysis bg-neutral-950 border border-neutral-700 rounded p-4">
-            <h3 className="font-semibold text-white mb-3">{t('Stock.Analyst-Ratings.Recommendations.Analyst Recommendations')}</h3>
+        <div className="my-analysis bg-base-950 border border-border rounded p-4">
+            <h3 className="font-semibold text-text mb-3">{t('Stock.Analyst-Ratings.Recommendations.Analyst Recommendations')}</h3>
             <div className='hidden sm:block relative w-full h-full'>
                 <Bar className=' h-full' data={barData} options={barOptions} />
             </div>
             <div className='sm:hidden block relative w-full h-full'>
-                <table className='table table-sm border border-neutral-700 rounded-lg'>
+                <table className='table table-sm border border-border rounded-lg'>
                     <thead>
                         <tr>
                             <th>Ratings</th>

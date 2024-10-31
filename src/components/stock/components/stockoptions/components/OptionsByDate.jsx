@@ -51,7 +51,7 @@ const OptionsByDate = ({ ticker, optionsDates, stockOptions }) => {
                 </div>
             </div>
             <details open className="collapse collapse-arrow rounded border border-border mb-3">
-                <summary className="collapse-title text-text text-lg font-bold  bg-neutral-700">
+                <summary className="collapse-title text-text text-lg font-bold  bg-base-800">
                     Calls
                 </summary>
                 <div className="collapse-content">
@@ -110,7 +110,7 @@ const OptionsByDate = ({ ticker, optionsDates, stockOptions }) => {
             </details>
 
             <details open className="collapse collapse-arrow rounded border border-border mb-3">
-                <summary className="collapse-title text-text text-lg font-bold  bg-neutral-700">
+                <summary className="collapse-title text-text text-lg font-bold  bg-base-800">
                     Puts
                 </summary>
                 <div className="collapse-content">

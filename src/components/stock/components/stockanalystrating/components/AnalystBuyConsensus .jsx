@@ -64,13 +64,13 @@ const Rate_ptds = ({ currentPrice, lowTarget, meanTarget, highTarget, curr }) =>
                     ?
                     <tr>
                         <td><FontAwesomeIcon icon="fa-regular fa-circle-check" className="text-up" /></td>
-                        <td><p>Analysts have set a mean price target forecast of <span className="text-white">{curr}{meanTarget}</span>. This target is <span className="text-up">{percentageDiff(currentPrice, meanTarget).toFixed(2)}%</span> above the current price.</p></td>
+                        <td><p>Analysts have set a mean price target forecast of <span className="text-text">{curr}{meanTarget}</span>. This target is <span className="text-up">{percentageDiff(currentPrice, meanTarget).toFixed(2)}%</span> above the current price.</p></td>
                     </tr>
 
                     :
                     <tr>
                         <td><FontAwesomeIcon icon="fa-regular fa-circle-xmark" className="text-down" /></td>
-                        <td><p>Analysts have set a mean price target forecast of <span className="text-white">{curr}{meanTarget}</span>. This target is <span className="text-down">{percentageDiff(currentPrice, meanTarget).toFixed(2)}%</span> below the current price.</p></td>
+                        <td><p>Analysts have set a mean price target forecast of <span className="text-text">{curr}{meanTarget}</span>. This target is <span className="text-down">{percentageDiff(currentPrice, meanTarget).toFixed(2)}%</span> below the current price.</p></td>
                     </tr>
 
             }
@@ -290,14 +290,14 @@ const AnalystBuyConsensus = ({ ticker, stockQuote, stockSummary }) => {
     const curr = currToSymbol(stockQuote.currency)
     const score = score_ptds + score_acs
     return (
-        <div className="my-buyconsensus bg-neutral-950 border border-neutral-700 rounded p-4 border-spacing-10">
-            <h3 className="font-semibold text-white mb-3">Analyst ratings score</h3>
+        <div className="my-buyconsensus bg-base-950 border border-border rounded p-4 border-spacing-10 shadow">
+            <h3 className="font-semibold text-text mb-3">Analyst ratings score</h3>
             <div className="flex flex-col items-center mb-3">
                 <div className={`radial-progress font-bold mb-6 ${score >= 60 ? 'text-up' : score >= 40 ? 'text-hold' : 'text-down'
                     }`} style={{ '--value': score }} role="progressbar">
                     {score.toFixed(2)}
                 </div>
-                <p>We assigns a score of <span className={`font-semibold ${score >= 60 ? 'text-up' : score >= 40 ? 'text-hold' : 'text-down'}`}>{score.toFixed(2)}</span><span className="text-white font-semibold">/100</span> to <span className="text-white font-semibold">{ticker}</span></p>
+                <p>We assigns a score of <span className={`font-semibold ${score >= 60 ? 'text-up' : score >= 40 ? 'text-hold' : 'text-down'}`}>{score.toFixed(2)}</span><span className="text-text font-semibold">/100</span> to <span className="text-text font-semibold">{ticker}</span></p>
             </div>
             <table className="table">
                 <tbody>
